@@ -16,9 +16,14 @@ export default function Item({item}) {
             </div>
             <div className={styles.flex}>
                 <p>Price: {item.price}</p>
-                {!item.count > 0 && <button type='button' className={styles.button}>Add to Cart</button>}
-                {item.count > 0 && <button type='button' className={styles.buttonDisabled} disabled>Added to Cart</button>}
+                <button type='button' className={`${styles.button} ${styles.addButton}`}>Add to Cart</button>
             </div>
+            {item.count &&
+            <div className={styles.flex}>
+                <p>Cart: {item.count}</p>
+                {<button type='button' className={`${styles.button} ${styles.removeButton}`}>Remove from Cart</button>}
+            </div>
+            }
         </div>
     </div>
     )

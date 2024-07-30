@@ -35,10 +35,14 @@ img {
     border: 1px solid white;
 }
 
-.buttonDisabled {
+.addButton:hover {
     background-color: lightgreen;
     color: black;
-    cursor: auto;
+}
+
+.removeButton:hover {
+    background-color: lightcoral;
+    color: black;
 }
 
 /* Layout */
