@@ -1,0 +1,32 @@
+/* Style */
+
+.header > * {
+    margin: 1rem 2rem;
+}
+
+.navbar {
+    list-style: none;
+    padding: 0%;
+    font-size: large;
+}
+
+.cartCount {
+    background-color: lightcoral;
+    border-radius: 45%;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+/* Layout */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}

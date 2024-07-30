@@ -1,10 +1,12 @@
-
+import Header from "./Header/Header"
 
 function App() {
+  const title = 'ODIN | Shopping Cart';
+  const cartCount = 0;
 
   return (
     <>
-      <h1>Shopping Cart App</h1>
+      <Header title={title} cartCount={cartCount} />
     </>
   )
 }
