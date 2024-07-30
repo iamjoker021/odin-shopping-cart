@@ -1,5 +1,5 @@
 import Header from "./Header/Header"
-import Home from "./Home/Home"
+import { Outlet } from "react-router-dom";
 
 function App() {
   const title = 'ODIN | Shopping Cart';
@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Header title={title} cartCount={cartCount} />
-      <Home itemList={itemList} />
+      <Outlet context={[itemList]}/>
     </>
   )
 }
