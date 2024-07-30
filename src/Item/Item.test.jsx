@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import Item from "./Item";
 
 describe("Item component", () => {
-    const cart = {
+    const item = {
         "id":1,
         "title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
         "price":109.95,
@@ -13,37 +13,37 @@ describe("Item component", () => {
         "rating":{"rate":3.9,"count":120}
     }
     it('test image correct in Card', () =>{
-        render(<Item cart={cart}/>)
-        expect(screen.getByRole('img').src).toMatch(cart.image);
+        render(<Item item={item}/>)
+        expect(screen.getByRole('img').src).toMatch(item.image);
     })
 
     it('test heading correct in Card', () =>{
-        render(<Item cart={cart}/>)
-        expect(screen.getByRole('heading').textContent).toMatch(cart.title);
+        render(<Item item={item}/>)
+        expect(screen.getByRole('heading').textContent).toMatch(item.title);
     })
 
     it('test description correct in Card', () =>{
-        render(<Item cart={cart}/>)
-        expect(screen.getByText(cart.description)).toBeInTheDocument();
+        render(<Item item={item}/>)
+        expect(screen.getByText(item.description)).toBeInTheDocument();
     })
 
     it('test Rating & Count correct in Card', () =>{
-        render(<Item cart={cart}/>)
-        expect(screen.getByText(`Rating: ${cart.rating.rate} (${cart.rating.count})`), {exact: false}).toBeInTheDocument();
+        render(<Item item={item}/>)
+        expect(screen.getByText(`Rating: ${item.rating.rate} (${item.rating.count})`), {exact: false}).toBeInTheDocument();
     })
 
     it('test categroy correct in Card', () =>{
-        render(<Item cart={cart}/>)
-        expect(screen.getByText(cart.category)).toBeInTheDocument();
+        render(<Item item={item}/>)
+        expect(screen.getByText(item.category)).toBeInTheDocument();
     })
 
     it('test Price correct in Card', () =>{
-        render(<Item cart={cart}/>)
-        expect(screen.getByText(`Price: ${cart.price}`), {exact: false}).toBeInTheDocument();
+        render(<Item item={item}/>)
+        expect(screen.getByText(`Price: ${item.price}`), {exact: false}).toBeInTheDocument();
     })
 
     it('test Add to Cart button correct in Card', () =>{
-        render(<Item cart={cart}/>)
-        expect(screen.getByRole('button').textContent).toMatch(/Add to Cart/);
+        render(<Item item={item}/>)
+        expect(screen.getByRole('button').textContent).toMatch(/Add to Cart/i);
     })
 })
