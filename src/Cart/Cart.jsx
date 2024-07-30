@@ -4,12 +4,31 @@ import { useOutletContext } from "react-router-dom";
 import Item from "../Item/Item";
 
 function Cart() {
-    let [cartList] = useOutletContext() || [[]];
-    cartList = cartList.filter(cart => cart.count > 0);
+    let [itemList, setItemList] = useOutletContext() || [[]];
+    const cartList = itemList.filter(cart => cart.count > 0);
+
+    const handleAdd = (e, item) => {
+        itemList.forEach(element => {
+            if (element.id === item.id) {
+                element["count"] = (element["count"] || 0) + 1;
+            }
+        });
+        setItemList([...itemList]);
+    }
+
+    const handleRemove = (e, item) => {
+        itemList.forEach(element => {
+            if (element.id === item.id) {
+                element["count"] = element["count"] - 1;
+            }
+        });
+        setItemList([...itemList]);
+    }
+
     return (
         <div className={cartStyle.flexHorizontal}>
             <section className={styles.cards}>
-                {cartList.length > 0 && cartList.map(cart => <Item key={cart.id} item={cart} />)}
+                {cartList.length > 0 && cartList.map(cart => <Item key={cart.id} item={cart} handleAdd={handleAdd} handleRemove={handleRemove} />)}
                 {cartList.length <= 0 && <p>No Items Found Add Item from Home Page</p>}
             </section>
             {cartList.length>0 &&
