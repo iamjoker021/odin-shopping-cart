@@ -35,6 +35,12 @@ img {
     border: 1px solid white;
 }
 
+.buttonDisabled {
+    background-color: lightgreen;
+    color: black;
+    cursor: auto;
+}
+
 /* Layout */
 .card {
     display: flex;
