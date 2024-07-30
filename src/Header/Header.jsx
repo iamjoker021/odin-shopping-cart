@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 import PropTypes from 'prop-types';
 
@@ -10,14 +10,14 @@ function Header({ title, cartCount }) {
             <nav>
                 <ul className={styles.navbar}>
                     <li>
-                        <Link to="home">
+                        <NavLink to="home">
                             Home
-                        </Link>
+                        </NavLink>
                     </li>
                     <li>
-                        <a href="cart">
+                        <NavLink to="cart">
                             Your Cart {cartCount > 0 && <span className={styles.cartCount}>{cartCount}</span>}
-                        </a>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>
