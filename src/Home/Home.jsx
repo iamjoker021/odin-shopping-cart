@@ -6,8 +6,8 @@ function Home() {
     const [itemList] = useOutletContext() || [];
     return (
         <section className={styles.cards}>
-            {itemList.length > 0 && itemList.map(item => <Item key={item.id} item={item} />)}
-            {itemList.length <= 0 && <p>Sorry No Item Found, Please try reloading and try after some time</p>}
+            {!(itemList && itemList.length > 0) && <p>Sorry No Item Found, Please try reloading and try after some time</p>}
+            {(itemList && itemList.length > 0) && itemList.map(item => <Item key={item.id} item={item} />)}
         </section>
     )
 }
