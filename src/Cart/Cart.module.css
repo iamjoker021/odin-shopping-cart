@@ -1,0 +1,23 @@
+/* Style */
+
+table, th, td {
+    border: 1px solid;
+    text-align: center;
+}
+
+.table td {
+    padding: 0.5rem;
+}
+
+/* Layout */
+.flexHorizontal {
+    display: flex;
+}
+
+.flexHorizontal > section {
+    flex: 1;
+}
+
+.flexHorizontal > table {
+    align-self: center;
+}
