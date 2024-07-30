@@ -1,4 +1,4 @@
-import styles from './Home.module.css'
+import styles from '../ItemList.module.css'
 import Item from '../Item/Item'
 import { useOutletContext } from 'react-router-dom';
 
